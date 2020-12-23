@@ -1,0 +1,171 @@
+$page-padding: 10mm;
+$page-width: 279.4mm;
+$page-height: 431.8mm;
+
+@font-face {
+  src: local('Chomsky');
+  font-family: 'chomsky';
+}
+
+html,
+body {
+  font-family: 'uVeiwEdisplay E', 'はんなり明朝', 'Yu Gothic', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:not(html) {
+  font-family: inherit;
+}
+
+div.date {
+  font-family: 'chomsky', Impact, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif;
+  text-align: right;
+}
+
+div.title {
+  border-bottom: 2px solid;
+  border-top: 2px solid;
+  font-family: 'chomsky', Impact, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif;
+  > h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 7rem;
+  }
+  > span {
+    font-size: 1.2rem;
+    display: block;
+    text-align: right;
+    padding-right: 2rem;
+  }
+}
+
+@media screen {
+  body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+
+div.paper {
+  width: $page-width - $page-padding * 2;
+  height: $page-height - $page-padding * 2;
+  padding: $page-padding;
+  position: relative;
+  background: #f8f6f3;
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  &:not(:last-child) {
+    page-break-after: always;
+  }
+
+  @media screen {
+    margin: 15mm;
+    box-shadow: 1px 1px 2px 2px #13132498;
+  }
+
+  @media print {
+    margin: 0mm;
+  }
+}
+
+ol#toc {
+  list-style: upper-latin;
+  font-size: 110%;
+  margin-left: 10mm;
+  width: 116mm;
+  margin: 3mm;
+  padding: 0;
+  padding-left: 20mm;
+  font-family: 'chomsky', 'heading-font';
+
+  li {
+    margin: 0;
+    text-align: center;
+    position: relative;
+  }
+}
+
+div.banner {
+  margin: 4px auto;
+
+  .legend {
+    &::before {
+      font-family: 'Lucida Sans Unicode';
+      font-weight: bold;
+      content: '✔';
+      padding-right: 4px;
+      transform: rotate(20deg);
+      display: inline-block;
+    }
+  }
+
+  ol {
+    margin: 0 0 0 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+article {
+  padding: 1rem;
+  border: solid 2px;
+  display: grid;
+
+  .main-article {
+    h2 {
+      font-size: 4rem;
+      letter-spacing: -5px;
+      margin: 0;
+      word-spacing: -2rem;
+    }
+
+    p {
+      margin-block: 0.2rem;
+    }
+  }
+  div {
+    .body {
+      line-height: 1.4;
+      &::first-letter {
+        font-size: 400%;
+        display: block;
+        float: left;
+        padding-right: 0.2rem;
+        line-height: normal;
+      }
+    }
+  }
+  .article {
+    &.advertise {
+      border-top: solid 2px;
+      grid-column: 1/-1;
+      grid-row: -2/-1;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      row-gap: 0.2rem;
+
+      h2 {
+        margin: 0;
+        grid-column: 1/-1;
+
+        &::before {
+          content: '<';
+        }
+        &::after {
+          content: '>';
+        }
+      }
+
+      .ad-item:not(:last-child) {
+        border-right: solid 2px;
+      }
+    }
+  }
+}

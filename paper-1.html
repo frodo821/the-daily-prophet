@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="scripts/paper.js"></script>
+    <title>Document</title>
+    <style>
+      .main-article.main-article h2 {
+        letter-spacing: -8px;
+        text-align: justify;
+      }
+      .tdp {
+        font-family: Chomsky;
+        letter-spacing: initial;
+        word-spacing: initial;
+      }
+      article {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        row-gap: 1rem;
+      }
+      .article.editorial {
+        border-right: solid 2px;
+      }
+      .main-article {
+        border-bottom: solid 1px;
+      }
+      .article.editorial h2 {
+        writing-mode: vertical-rl;
+        float: right;
+        font-size: 3rem;
+        margin: 0;
+      }
+      .article.advertise {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .article.advertise .ad-item div {
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 50%;
+        transform: translateY(-100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="paper">
+      <div class="heading">
+        <div class="date">
+          <script>
+            writeDate();
+          </script>
+        </div>
+        <div class="title">
+          <h1>The Daily Prophet</h1>
+          <span>★ITF21s' The Most Widely Adopted Broadsheet Newspaper</span>
+        </div>
+        <div class="banner">
+          <div class="legend">Today's pickup</div>
+          <ol>
+            <li>The Daily Prophet 創刊のお知らせ</li>
+            <li>掲載広告募集のお知らせ</li>
+          </ol>
+        </div>
+      </div>
+      <article>
+        <div class="main-article" style="grid-column: span 2">
+          <h2>
+            <span class="tdp">The Daily Prophet</span>
+            創刊のお知らせ
+          </h2>
+          <div class="body">
+            <p>
+              本紙はITF21の諸兄諸姉の学生生活がより豊かになることを願い、日々のちょっとしたお知らせや気づき、諸氏から寄稿された記事を広く伝えることを目的として創刊されました。
+              まだ我々の大学への入学までは時間がありますが、神殿というコミュニティの黎明期にあって、また新型コロナウィルス感染症の流行に伴って我々の生活が著しく制限される中で、本紙によって我々の親睦が深まり、無聊の慰めになることが、創刊に際しての願いであります。
+            </p>
+            <p>
+              さて、創刊に際しまして、いくつかお知らせがあります。
+              ひとつは、編集委員の募集です。この活動に興味がある方がいらっしゃいましたら、是非ふろどまでDMなどでご連絡ください。<span
+                class="tdp"
+                >The Daily Prophet</span
+              >紙は、あなたの協力をお待ちしています。
+              もうひとつは、寄稿・掲載記事募集のお知らせです。ITF21の諸兄諸姉の独創的な着眼点によって書かれた記事を本紙では募集します。こちらも、当面の間はふろどまでDMでお願いしたいと思います。原稿料などをお支払いすることはできないため、大変心苦しい限りではありますが、協力していただける有志の方には心よりのお礼を申し上げます。
+            </p>
+          </div>
+        </div>
+        <div class="article editorial">
+          <h2>Editorial</h2>
+          <div class="body"></div>
+        </div>
+        <div class="article advertise">
+          <h2>広告欄</h2>
+          <div class="ad-item">
+            <div>掲載広告募集中</div>
+          </div>
+          <div class="ad-item">
+            <div>掲載広告募集中</div>
+          </div>
+          <div class="ad-item">
+            <div>掲載広告募集中</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>
